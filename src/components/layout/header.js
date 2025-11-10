@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
     return (
-        <header className="">
+        <header className="p-4">
             <div className=" shadow-md bg-white ">
                 <div className="  container mx-auto py-2">
 
@@ -24,7 +24,7 @@ export default function Header() {
                                 src="/avatar.png"
                                 alt="logo"
                                 width={32}
-                                height={32} c321sqaNYJY
+                                height={32}
                                 priority
                             />
                             <span className="mr-2">خوش آمدید </span>
