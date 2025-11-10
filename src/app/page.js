@@ -1,7 +1,10 @@
+import Filters from './../components/filters';
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50  dark:bg-black">
-
+    <div className="grid grid-rows-[20px-1fr-20px] items-center justify-items-center">
+        <div className="container mx-auto">
+          <Filters/>
+        </div>
     </div>
   );
 }
