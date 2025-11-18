@@ -1,6 +1,8 @@
-import { colorClasses } from './../../constants/colors'
+import { colorClasses } from '../../constants/colors'
+import { NumberBlockProps } from '../../types/overview';
 
-export default function NumberBlock({ number, title, color }) {
+
+export default function NumberBlock({ number, title, color }:NumberBlockProps) {
     return (
         <div className="text-center">
             <h2
