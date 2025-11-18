@@ -1,5 +1,5 @@
 import FilterItem from "./filterItem";
-import { categories, priorities, statuses, sortOption } from "./../../constants/filters";
+import { categories, priorities, statuses, sortOption } from "../../constants/filters";
 import Block from "../layout/block";
 
 
