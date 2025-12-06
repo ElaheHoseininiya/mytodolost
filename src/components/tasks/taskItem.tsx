@@ -11,8 +11,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { TaskItemProps } from '../../types/tasks';
 
-
-export default function TaskItem({
+const TaskItem: React.FC<TaskItemProps> = ({
   taskId,
   title,
   description,
@@ -21,7 +20,7 @@ export default function TaskItem({
   priority,
   status,
   category,
-}:TaskItemProps) {
+}) => {
   const priorityTag = priorityChip[priority] || {};
   const statusTag = statusChip[status] || {};
 
@@ -30,20 +29,16 @@ export default function TaskItem({
       <div className="flex justify-between">
         <div className="flex gap-2 mb-2">
           <h3 className="font-bold">{title}</h3>
-          {
-            <Chip
-              label={priorityTag.label}
-              color={priorityTag.color}
-              textColor={priorityTag.textColor}
-            />
-          }
-          {
-            <Chip
-              label={statusTag.label}
-              color={statusTag.color}
-              textColor={statusTag.textColor}
-            />
-          }
+          <Chip
+            label={priorityTag.label}
+            color={priorityTag.color}
+            textColor={priorityTag.textColor}
+          />
+          <Chip
+            label={statusTag.label}
+            color={statusTag.color}
+            textColor={statusTag.textColor}
+          />
         </div>
         <div className="flex">
           <PencilSquareIcon className="h-5 w-5 text-gray-500 mx-2" />
@@ -71,129 +66,6 @@ export default function TaskItem({
       </div>
     </Block>
   );
-}
+};
 
-// import Block from '../layout/block';
-// import Chip from '../ui/chip';
-// import { priorityChip, statusChip } from '../../constants/tasks';
-// import {
-//     FolderIcon,
-//     PencilSquareIcon,
-//     TrashIcon,
-//     CalendarIcon,
-//     ClockIcon,
-// } from '@heroicons/react/24/solid';
-
-// export default function TaskItem({
-//     taskId,
-//     title,
-//     description,
-//     dueDate,
-//     createdAt,
-//     priority,
-//     status,
-//     category,
-// }) {
-//     const priorityTag = priorityChip[priority] || {};
-//     const statusTag = statusChip[status] || {};
-
-//     return (
-//         <Block>
-//             <div className="flex justify-between">
-//                 <div className="flex gap-2 mb-2">
-//                     <h3 className="font-bold">{title}</h3>
-//                     {
-//                         <Chip
-//                             label={priorityTag.label}
-//                             color={priorityTag.color}
-//                             textColor={priorityTag.textColor}
-//                         />
-//                     }
-//                     {
-//                         <Chip
-//                             label={statusTag.label}
-//                             color={statusTag.color}
-//                             textColor={statusTag.textColor}
-//                         />
-//                     }
-//                 </div>
-//                 <div className="flex">
-//                     <PencilSquareIcon className="h-5 w-5 text-gray-500 mx-2" />
-//                     <TrashIcon className="h-5 w-5 text-gray-500" />
-//                 </div>
-//             </div>
-//             <p className="mb-2">{description}</p>
-//             <div className="flex">
-//                 <div className="flex">
-//                     <FolderIcon className="h-5 w-5 text-gray-500" />
-//                     <span className="text-gray-600 mx-2">{category}</span>
-//                 </div>
-//                 <div className="flex">
-//                     <CalendarIcon className="h-5 w-5 text-gray-500" />
-//                     <span className="text-gray-600 mx-2">
-//                         {dueDate.toLocaleDateString()}
-//                     </span>
-//                 </div>
-//                 <div className="flex">
-//                     <ClockIcon className="h-5 w-5 text-gray-500" />
-//                     <span className="text-gray-600 mx-2">
-//                         {createdAt.toLocaleDateString()}
-//                     </span>
-//                 </div>
-//             </div>
-//         </Block>
-//     );
-// }
-
-// import Block from "../layout/block";
-// import chip from '../ui/chip';
-// import { priorityChip, statusChip } form '../../constants/tasks';
-// import {
-//     FolderIcon,
-//     PencilSquareIcon,
-//     TrashIcon,
-//     ClockIcon,
-// }form '@heroicons/react/24/solid';
-
-// export default function TaskItem({
-//     taskId,
-//     title,
-//     description,
-//     dueDate,
-//     createdAt,
-//     priority,
-//     status,
-//     category,
-// }) {
-//     const priorityTag = priorityChip[priority] || {};
-//     const statusTag = statusChip[status] || {};
-//     return (
-//         <Block>
-//             <div className="flex justify-between ">
-//                 <div className="flex gap-2 mb-2">
-//                     <h3 className="font-bold">{title}</h3>{
-//                         <chip
-//                             label={priorityTag.label}
-//                             label={priorityTag.color}
-//                             label={priorityTag.textcolor}
-//                         />
-//                     }
-//                     {
-//                         <chip
-//                             label={priorityTag.label}
-//                             label={priorityTag.color}
-//                             label={priorityTag.textcolor}
-//                         />
-//                     }
-//                     {
-//                         <chip
-//                             label={priorityTag.label}
-//                             label={priorityTag.color}
-//                             label={priorityTag.textcolor}
-//                         />
-//                     }
-//                 </div>
-//             </div>
-//         </Block>
-//     )
-// }
+export default React.memo(TaskItem);
