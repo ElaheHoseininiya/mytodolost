@@ -1,7 +1,6 @@
-type chipType = { label: string; color: string; textColor:string}
+type ChipType = { label: string; color: string; textColor: string };
 
-
-export const priorityChip:Record<string,chipType> = {
+export const priorityChip: Record<string, ChipType> = {
     low: {
         label: 'پایین',
         color: 'bg-green-300',
@@ -19,7 +18,7 @@ export const priorityChip:Record<string,chipType> = {
     },
 };
 
-export const statusChip: Record<string, chipType> = {
+export const statusChip: Record<string, ChipType> = {
   todo: {
     label: 'در انتظار',
     color: 'bg-blue-300',

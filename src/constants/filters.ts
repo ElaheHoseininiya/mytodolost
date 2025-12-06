@@ -1,26 +1,30 @@
-export type selectItem = { label: string; value:string}
 
-export const categories: selectItem[] = [
+
+import { StatusType } from "../types/tasks";
+
+export type SelectItem = { label: string; value: string };
+export type StatusItem = { label: string; value:StatusType | 'all'};
+
+export const categories: SelectItem[] = [
   { value: 'all', label: 'همه' },
   { value: 'personal', label: 'شخصی' },
   { value: 'work', label: 'کاری' },
   { value: 'fun', label: 'تفریحی' },
 ];
-export const priorities: selectItem[] = [
+export const priorities: SelectItem[] = [
   { value: 'all', label: 'همه' },
   { value: 'high', label: 'بالا' },
   { value: 'medium', label: 'متوسط' },
   { value: 'low', label: 'پایین' },
 ];
-
-export const statuses: selectItem[] = [
+export const statuses: SelectItem[] = [
   { value: 'all', label: 'همه' },
-  { value: 'completed', label: 'تکمیل شده' },
-  { value: 'in-progress', label: 'در حال انجام' },
-  { value: 'not_started', label: 'بدون وضعیت' },
+  { value: 'done', label: 'تکمیل شده' },
+  { value: 'inProgress', label: 'در حال انجام' },
+  { value: 'notStarted', label: 'بدون وضعیت' },
 ];
 
-export const sortOption:selectItem[] = [
-    { value: "latest", label: "جدیدترین‌ها" },
-    { value: "oldest", label: "قدیمی‌ترها" }
+export const sortOption: SelectItem[] = [
+  { value: 'latest', label: 'جدیدترین‌ها' },
+  { value: 'oldest', label: 'قدیمی‌ترها' },
 ];
